@@ -8,7 +8,6 @@
     <preConditions>
         <dbms type="postgresql"/>
     </preConditions>
-
     <changeSet id="1" author="igor_gritsuk">
         <tagDatabase tag="CreateTableAuto"/>
     </changeSet>
@@ -18,6 +17,5 @@
         <tagDatabase tag="CreateTableDriver"/>
     </changeSet>
     <include file="02_great_driver_table.sql" relativeToChangelogFile="true"/>
-
 
 </databaseChangeLog>
