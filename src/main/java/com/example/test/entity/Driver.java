@@ -18,48 +18,44 @@ import java.util.Set;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-//@Table( name = "driver")
+@Table( name = "driver")
 public class Driver {
     /**
-     * Составной ключ, первая часть цвет
+     * Паспорт водителя
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    int id;
-
     @Column(name = "passport")
     Integer passport;
     /**
-     * Составной ключ, вторая часть количества хлопка
+     * Фамилия Имя Отчество водителя
      */
     @Column(name = "fio")
     String FIO;
     /**
-     * Колчиество на складе
+     * Категория прав
      */
     @Column(name = "category")
     String category;
     /**
-     * Колчиество на складе
+     * Дата рождения водителя
      */
     @Column(name = "born")
     LocalDate born;
     /**
-     * Колчиество на складе
+     * Водительский стаж
      */
     @Column(name = "experience")
     Integer experience;
     /**
-     * Колчиество на складе
+     * Счет водителя
      */
     @Column(name = "dollar")
-    Integer dollar;
+    Double dollar;
     /**
-     * Колчиество на складе
+     * Автомобили водителя
      */
-//    @OneToMany
-//    @Column(name = "auto_id")
-//    Set<Auto> auto;
+    @OneToMany
+    @Column(name = "auto_id")
+    Set<Auto> auto;
 
 }
