@@ -14,14 +14,15 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DriverDto {
-    /**
-     * Паспорт водителя
-     */
-    Integer passport;
+
     /**
      * Фамилия Имя Отчество водителя
      */
     String FIO;
+    /**
+     * Паспорт водителя
+     */
+    Integer passport;
     /**
      * Категория прав
      */
@@ -29,7 +30,7 @@ public class DriverDto {
     /**
      * Дата рождения водителя
      */
-    LocalDate born;
+    String born;
     /**
      * Водительский стаж
      */

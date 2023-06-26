@@ -1,15 +1,18 @@
+-- Создание таблицы автомобилей
 CREATE TABLE auto
 (
-    id         integer generated always as identity primary key,
-    auto_number VARCHAR,
-    auto_vin bigint,
+    auto_number VARCHAR PRIMARY KEY ,
+    auto_vin INT,
     manufacturer VARCHAR,
     model VARCHAR,
-    year_of_release INT
+    year_of_release INT,
+    list_of_details INT,
+    driver_id INT,
+    constraint fk_driver_id foreign key (driver_id) references driver (passport)
 );
--- CREATE TABLE auto_list_of_details
--- (
---     details_id  bigint,
---     index       bigint,
---     details text
--- );
+CREATE TABLE auto_list_of_details
+(
+    details_id  INT,
+    index       INT,
+    details VARCHAR
+);
