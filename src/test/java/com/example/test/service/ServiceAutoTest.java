@@ -53,13 +53,13 @@ public class ServiceAutoTest {
         assertThat(serviceAuto.getAuto(number)).isEqualTo(autoDto);
         verify(autoRepository,times(ONE)).findById(any());
     }
-//    @Test
-//    void getAllAutoTest() {
-//        when(autoRepository.findAll()).thenReturn(autoList);
-//        when(autoMapper.toDtoList(any())).thenReturn(autoDtoList);
-//        assertThat(serviceAuto.getAllAuto()).isEqualTo(autoDtoList);
-//        verify(autoRepository,times(ONE)).findAll();
-//    }
+    @Test
+    void getAllAutoTest() {
+        when(autoRepository.findAll()).thenReturn(autoList);
+        when(autoMapper.toDtoList(any())).thenReturn(autoDtoList);
+        assertThat(serviceAuto.getAllAuto()).isEqualTo(autoDtoList);
+        verify(autoRepository,times(ONE)).findAll();
+    }
     @Test
     void addAutoTest() {
         when(autoRepository.save(auto)).thenReturn(auto);

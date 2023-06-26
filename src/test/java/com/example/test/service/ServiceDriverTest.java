@@ -58,13 +58,13 @@ public class ServiceDriverTest {
         assertThat(serviceDriver.getDriver(passport)).isEqualTo(driverDto);
         verify(driverRepository,times(ONE)).findById(any());
     }
-//    @Test
-//    void getAllDriverTest() {
-//        when(driverRepository.findAll()).thenReturn(driverList);
-//        when(driverMapper.toDtoList(any())).thenReturn(driverDtoList);
-//        assertThat(serviceDriver.getAllDriver()).isEqualTo(driverDtoList);
-//        verify(driverRepository,times(ONE)).findAll();
-//    }
+    @Test
+    void getAllDriverTest() {
+        when(driverRepository.findAll()).thenReturn(driverList);
+        when(driverMapper.toDtoList(any())).thenReturn(driverDtoList);
+        assertThat(serviceDriver.getAllDriver()).isEqualTo(driverDtoList);
+        verify(driverRepository,times(ONE)).findAll();
+    }
     @Test
     void addDriverTest() {
         when(driverRepository.save(driver)).thenReturn(driver);
