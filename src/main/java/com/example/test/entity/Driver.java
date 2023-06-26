@@ -2,6 +2,7 @@ package com.example.test.entity;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -11,6 +12,7 @@ import java.util.Set;
 /**
  * Класс сущность для таблицы носков
  */
+@Component
 @Getter
 @Setter
 @ToString
@@ -20,17 +22,18 @@ import java.util.Set;
 @Entity
 @Table( name = "driver")
 public class Driver {
+
+    /**
+     * Фамилия Имя Отчество водителя
+     */
+    @Column(name = "fio")
+    String FIO;
     /**
      * Паспорт водителя
      */
     @Id
     @Column(name = "passport")
     Integer passport;
-    /**
-     * Фамилия Имя Отчество водителя
-     */
-    @Column(name = "fio")
-    String FIO;
     /**
      * Категория прав
      */
@@ -40,7 +43,7 @@ public class Driver {
      * Дата рождения водителя
      */
     @Column(name = "born")
-    LocalDate born;
+    String born;
     /**
      * Водительский стаж
      */

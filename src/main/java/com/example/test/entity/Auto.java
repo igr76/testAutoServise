@@ -15,8 +15,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Entity
 @Table( name = "auto")
+@Entity
 public class Auto {
     /**
      * Номер автомобиля
